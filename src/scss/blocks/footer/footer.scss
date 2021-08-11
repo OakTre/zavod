@@ -1,0 +1,15 @@
+.footer {
+	padding: 24px 0;
+
+	&__container {
+		display: flex;
+	}
+
+	&__logo {
+		.icon-factory {
+			&:hover {
+				fill: $color-yellow;
+			}
+		}
+	}
+}

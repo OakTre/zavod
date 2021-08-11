@@ -1,0 +1,17 @@
+.header {
+	padding: 24px 0;
+
+	&__container {
+		display: flex;
+	}
+
+	&__burger {
+		margin-left: auto;
+
+		&:hover {
+			span {
+				background-color: $color-yellow;
+			}
+		}
+	}
+}
