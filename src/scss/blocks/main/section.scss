@@ -5,13 +5,33 @@
 	width: 100%;
 	height: 100%;
 
+	&__container {
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+
+		.simplebar-track {
+			&.simplebar-vertical {
+				width: 5px;
+			}
+		}
+
+		.simplebar-scrollbar {
+			&::before {
+				right: 0;
+				left: auto;
+				width: 1px;
+			}
+		}
+	}
+
 	&__aside {
 		position: absolute;
 		top: 0;
 		right: 0;
 		width: 50%;
 		height: 100%;
-		padding: 32px;
+		padding: 32px 56px;
 		background-color: $color-white;
 	}
 
@@ -19,6 +39,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: -5px;
+		margin-bottom: 50px;
 
 		span {
 			display: inline-block;
@@ -33,5 +54,26 @@
 
 	&__heading {
 		margin: 0;
+		margin-bottom: 32px;
+	}
+
+	&__text {
+		margin: 0;
+		margin-bottom: 24px;
+		font-size: rem(24px);
+		line-height: 1.3;
+	}
+
+	&__img {
+		width: 100%;
+		height: 450px;
+		margin-bottom: 32px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+
+		&:nth-last-of-type(1) {
+			margin: 0;
+		}
 	}
 }

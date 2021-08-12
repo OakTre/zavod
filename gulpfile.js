@@ -166,6 +166,7 @@ const watchFiles = () => {
     watch("./src/resourses/**", resourses)
     watch("./src/js/**/*.js", scripts)
 		watch("./src/img/*.{png,jpg,jpeg}", toWebp)
+		watch("./src/scss/**/*.scss", stylesVendor)
 }
 
 exports.styles = styles;
@@ -230,7 +231,7 @@ const minifyImg = () => {
             imagemin.optipng({ optimizationLevel: 3 }),
             imagemin.mozjpeg({ quality: 75, progressive: true }),
         ]))
-        .pipe(dest('app/img'));
+        .pipe(dest('src/img'));
 };
 
 exports.minifyImg = minifyImg;

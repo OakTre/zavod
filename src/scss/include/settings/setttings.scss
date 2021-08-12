@@ -5,13 +5,14 @@
 }
 
 html {
+	box-sizing: border-box;
 	font-size: 16px;
 }
 
 body {
-	box-sizing: border-box;
 	color: $main-color;
 	font-family: $main-font-family;
+	line-height: 1.5;
 	background-color: $main-bg-color;
 
 	@include _2100 {
