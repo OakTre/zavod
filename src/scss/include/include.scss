@@ -32,3 +32,48 @@
 		fill: $main-color;
 	}
 }
+
+.button {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	cursor: pointer;
+
+	&-primary {
+		position: relative;
+		z-index: 5;
+		padding: 21px 62px;
+		overflow: hidden;
+		color: $main-color;
+		font-size: rem(18px);
+		border: 2px solid $main-color;
+		border-radius: 5px;
+		transition: color 0.3s ease-in-out;
+
+		@include desktop {
+			&:hover {
+				color: $color-white;
+			}
+		}
+
+		&__hover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			display: block;
+			height: 100%;
+			overflow: hidden;
+			background-color: $main-color;
+			transition: 0.3s ease-in-out;
+			pointer-events: none;
+		}
+	}
+
+	&:active {
+		transform: scale(0.99);
+	}
+}

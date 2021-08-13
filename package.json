@@ -21,6 +21,7 @@
         "babel-loader": "^8.2.2",
         "browser-sync": "^2.26.14",
         "del": "^6.0.0",
+        "gsap": "^3.7.1",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
         "gulp-clean-css": "^4.3.0",
@@ -47,6 +48,7 @@
     },
     "dependencies": {
         "normalize.css": "^8.0.1",
+        "parallax-js": "^3.1.0",
         "pug-include-glob": "^0.4.3"
     }
 }

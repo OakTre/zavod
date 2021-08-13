@@ -1,54 +1,67 @@
 export default function () {
 	const video = document.querySelector(".video");
 
-	// let currentStep = 'first';
-	// let steps = {
-	// 	first: {
-	// 		time: 4.77,
-	// 		nextStep: 'second'
-	// 	},
-	// 	second: {
-	// 		time: 11.29,
-	// 		nextStep: 'third'
-	// 	},
-	// 	third: {
-	// 		time: 16.85,
-	// 		nextStep: 'thourth'
-	// 	},
-	// 	thourth: {
-	// 		time: 20.71,
-	// 		nextStep: 'fifth'
-	// 	},
-	// 	fifth: {
-	// 		time: 100,
-	// 		nextStep: 'end'
-	// 	}
-	// };
-	// video.addEventListener("timeupdate", function(){
-	// 	let curTime = this.currentTime;
+	setTimeout(function(){
+		video.play();
+	}, 1500)
 
-	// 	if (currentStep) {
-	// 		if (curTime > steps[currentStep].time) {
-	// 		  currentStep = steps[currentStep].nextStep;
+	let currentStep = 'start';
+	console.log(currentStep);
+	let steps = {
+		start: {
+			time: 8.224,
+			nextStep: 'first'
+		},
+		first: {
+			time: 23.222,
+			nextStep: 'second'
+		},
+		second: {
+			time: 28.222,
+			nextStep: 'third'
+		},
+		third: {
+			time: 36.71,
+			nextStep: 'fourth'
+		},
+		// fourth: {
+		// 	time: 100,
+		// 	nextStep: 'end'
+		// }
+	};
+	video.addEventListener("timeupdate", function(){
+		let curTime = this.currentTime;
 
-	// 		  document.querySelector(`.morgan-title[data-text="${currentStep}"]`).classList.add("_active");
+		if (currentStep) {
+			if (curTime > steps[currentStep].time) {
+			  currentStep = steps[currentStep].nextStep;
 
-	// 		  hideText(currentStep);
+			  setTimeout(function(){
+				document.querySelector(`.section[data-step="${currentStep}"]`).classList.add("_active");
+			  }, 300)
 
-	// 		  this.pause();
-	// 		}
-	// 	} else {
-	// 		video.stop();
-	// 	}
-	// });
+				showNextSlide(currentStep);
 
-	// function hideText(step) {
-	// 	const parent = document.querySelector(`.morgan-title[data-text="${step}"]`);
-	// 	const currentButton = parent.querySelector(".main-button");
+				console.log(currentStep);
 
-	// 	currentButton.addEventListener("click", function(){
-	// 		parent.classList.remove("_active");
-	// 		video.play();
-	// 	});
-	// }
+			  this.pause();
+			}
+		} else {
+			video.stop();
+		}
+	});
+
+	function showNextSlide(step) {
+		console.log(step);
+		const parent = document.querySelector(`.section[data-step="${step}"]`);
+		const currentButton = parent.querySelector(".showNext-button");
+
+		currentButton.addEventListener("click", function(){
+			parent.classList.remove("_active");
+
+			setTimeout(function(){
+				video.play();
+			}, 400)
+		});
+	}
 }
