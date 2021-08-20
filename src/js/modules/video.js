@@ -1,5 +1,11 @@
+import { gsap, ScrollTrigger} from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function () {
 	const video = document.querySelector(".video");
+
+	let timeline = gsap.timeline();
 
 	setTimeout(function(){
 		video.play();
@@ -9,7 +15,7 @@ export default function () {
 	console.log(currentStep);
 	let steps = {
 		start: {
-			time: 8.224,
+			time: 9,
 			nextStep: 'first'
 		},
 		first: {
@@ -35,9 +41,14 @@ export default function () {
 		if (currentStep) {
 			if (curTime > steps[currentStep].time) {
 			  currentStep = steps[currentStep].nextStep;
+			  let section = document.querySelector(`.section[data-step="${currentStep}"]`);
 
 			  setTimeout(function(){
-				document.querySelector(`.section[data-step="${currentStep}"]`).classList.add("_active");
+				timeline.to(section.querySelector(".section__aside"), {
+					x: 0,
+					opacity: 1,
+					ease: "power4.out"
+				})
 			  }, 300)
 
 				showNextSlide(currentStep);
