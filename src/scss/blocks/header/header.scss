@@ -6,6 +6,8 @@
 	}
 
 	&__burger {
+		position: relative;
+		z-index: 50;
 		margin-left: auto;
 
 		&:hover {

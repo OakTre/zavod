@@ -39,9 +39,9 @@
 		height: 100%;
 		padding: 32px 56px;
 		background-color: $color-white;
+		// transform: translateX(0);
 		transform: translateX(100%);
-		transform-origin: right;
-		transition: transform 0.3s ease-in-out;
+		transition: transform 0.7s ease-in-out;
 	}
 
 	&._active {

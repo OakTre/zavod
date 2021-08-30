@@ -175,6 +175,8 @@ h6 {
 }
 
 .header__burger {
+  position: relative;
+  z-index: 50;
   margin-left: auto;
 }
 
@@ -236,13 +238,10 @@ h6 {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transform-origin: right;
-  -ms-transform-origin: right;
-  transform-origin: right;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  -o-transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+  -o-transition: transform .7s ease-in-out;
+  transition: transform .7s ease-in-out,-webkit-transform .7s ease-in-out;
 }
 
 .section._active {
