@@ -24,10 +24,10 @@ export default function () {
 			time: 36.71,
 			nextStep: 'fourth'
 		},
-		// fourth: {
-		// 	time: 100,
-		// 	nextStep: 'end'
-		// }
+		fourth: {
+			time: 100,
+			nextStep: 'end'
+		}
 	};
 	video.addEventListener("timeupdate", function(){
 		let curTime = this.currentTime;
