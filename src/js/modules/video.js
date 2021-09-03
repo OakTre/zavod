@@ -8,7 +8,7 @@ export default function () {
 	let timeline = gsap.timeline();
 
 	setTimeout(function(){
-		video.play();
+		// video.play();
 	}, 1500)
 
 	let currentStep = 'start';
